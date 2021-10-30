@@ -131,36 +131,19 @@
     <hr />
     <h2 class="terminal-prompt">history | grep raffaele</h2>
     <div class="terminal-timeline">
+        {{ range sort ((.Site.GetPage "section" "events").Pages) ".Params.sort" }}
         <div class="terminal-card">
-            <header>👨‍💻 Event 1</header>
+            <header>{{ .Params.emoji }} {{ .Params.time }}</header>
             <div>
-              Description...
+                <p>
+                    <strong>{{ .Title }}</strong>
+                </p>
+                <p>
+                    {{ .Params.description }}
+                </p>
             </div>
         </div>
-        <div class="terminal-card">
-          <header>🧑‍🎓 Event 2</header>
-          <div>
-            Descritpion...
-          </div>
-        </div>
-        <div class="terminal-card">
-            <header>👨‍💻 Event 3</header>
-            <div>
-              Description...
-            </div>
-        </div>
-        <div class="terminal-card">
-          <header>🧑‍🎓 Event 4</header>
-          <div>
-            Description...
-          </div>
-        </div>
-        <div class="terminal-card">
-            <header>📜 Event 5</header>
-            <div>
-              Description...
-            </div>
-          </div>
+        {{ end }}
     </div>
 </div>
 
