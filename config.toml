@@ -8,5 +8,10 @@ theme = 'custom-theme'
     message = "Hi there 👋, I'm Raffaele"
     quote = "\"Just your friendly neighborhood developer\""
 
-[params.skills]
-    
+[params.contacts]
+    gpg = "0000 0000 0000 0000 0000 0000 0000 0000 0000 0000"
+    telegram = "#"
+    instagram = "#"
+    linkedin = "#"
+    twitter = "#"
+    github = "#"

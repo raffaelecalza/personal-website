@@ -173,13 +173,13 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi augue, accumsan ornare quam sed, tempus volutpat felis:
     </p>
     <ul>
-        <li>📱 <a href="#">Telegram</a></li>
-        <li>📷 <a href="#">Instagram</a></li>
-        <li>💼 <a href="#">Linkedin</a></li>
-        <li>🐣 <a href="#">Twitter</a></li>
-        <li>🐙 <a href="#">Github</a></li>
+        <li>📱 <a href="{{ .Site.Params.Contacts.Telegram }}" target="_blank">Telegram</a></li>
+        <li>📷 <a href="{{ .Site.Params.Contacts.Instagram }}" target="_blank">Instagram</a></li>
+        <li>💼 <a href="{{ .Site.Params.Contacts.Linkedin }}" target="_blank">Linkedin</a></li>
+        <li>🐣 <a href="{{ .Site.Params.Contacts.Twitter }}" target="_blank">Twitter</a></li>
+        <li>🐙 <a href="{{ .Site.Params.Contacts.Github }}" target="_blank">Github</a></li>
     </ul>
-    <p>GPG: <code>0000 0000 0000 0000 0000 0000 0000 0000 0000 0000</code></p>
+    <p>GPG: <code>{{ .Site.Params.Contacts.gpg }}</code></p>
 </div>
 
 {{ end }}
