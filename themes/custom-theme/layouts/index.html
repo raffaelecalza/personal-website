@@ -1,0 +1,162 @@
+{{ define "main" }}
+<!-- Navbar -->
+<div class="container">
+    <div class="terminal-nav">
+        <nav class="terminal-menu">
+        <ul>
+            <li><a class="menu-item" href="#whoami">about me.</a></li>
+            <li><a class="menu-item" href="#projects">projects.</a></li>
+            <li><a class="menu-item" href="#skills">skills.</a></li>
+            <li><a class="menu-item" href="#timeline">timeline.</a></li>
+            <li><a class="menu-item" href="#contacts">contacts.</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+<!-- Welcome message -->
+<div class="container" id="welcome-msg">
+    <img src="https://picsum.photos/100" alt="me" />
+    <h1>Hi there 👋, I'm Raffaele</h1>
+    <h5>"Just your friendly neighborhood developer"</h5>
+    <p><a href="#">[resume.pdf]</a></p>
+</div>
+
+<!-- About me description with interests -->
+<div class="container" id="whoami">
+    <hr />
+    <h2 class="terminal-prompt">whoami</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi augue, accumsan ornare quam sed, tempus volutpat felis. Donec elementum congue nulla quis finibus. Pellentesque mollis dui ut augue tempus congue. Ut sed enim id magna porttitor malesuada. Donec sem lectus, hendrerit nec ante vel, rhoncus congue eros. Duis in aliquet lacus. Integer in sem condimentum, aliquam lectus vel, eleifend nulla. Pellentesque imperdiet, erat in auctor auctor, augue lacus pharetra justo, in finibus quam ex eu leo. Sed lobortis pharetra mi, non congue nisl fermentum ultricies.
+    </p>
+    <p>
+        Donec neque est, consequat eget ipsum in, fringilla dignissim sem. Mauris tempor, lacus sed porta iaculis, lorem ante tempus nisi, ac elementum purus dui vel neque. Integer at cursus dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur et tincidunt est. Etiam eget efficitur ligula, sit amet venenatis lectus. Vivamus in est a nibh porttitor venenatis id dapibus erat. Aliquam leo felis, tristique id orci ut, consectetur sagittis lorem. Phasellus ac leo et lacus tincidunt accumsan. Etiam ornare urna id quam tristique pulvinar. Vivamus eget lorem eu metus lacinia rhoncus id eget elit. Morbi et venenatis felis. Quisque mi quam, accumsan in posuere at, ultricies vitae felis. Mauris.
+    </p>
+</div>
+
+<!-- Projects -->
+<div class="container" id="projects">
+    <hr />
+    <h2 class="terminal-prompt">ls -ahl ~/projects</h2>
+    <div class="terminal-card-container">
+        <div class="terminal-card">
+            <header>Project 1</header>
+            <div>
+                Enjoy a spot of modding from time to time. Here are a few mods for the game factorio, which is a bloody good game... <a href="#">[more]</a>
+            </div>
+        </div>
+        <div class="terminal-card">
+            <header>Project 2</header>
+            <div>
+                My dotfiles which follow me where ever I go! Stores my complete setup, with automated installation and management scripts. Although these may be private at the time of viewing... <a href="#">[more]</a>
+            </div>
+        </div>
+    </div>
+    <div class="terminal-card-container">
+        <div class="terminal-card">
+            <header>Project 3</header>
+            <div>
+                Enjoy a spot of modding from game... <a href="#">[more]</a>
+            </div>
+        </div>
+        <div class="terminal-card">
+            <header>Project 4</header>
+            <div>
+                My dotfiles which follow me where ever I go! Stores my complete setup, with automated installation and... <a href="#">[more]</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Skills -->
+<div class="container" id="skills">
+    <hr />
+    <h2 class="terminal-prompt">cat skills.json | jq</h2>
+    <div>
+        <div class="left-skills">
+            <p>Skill 1</p>
+            <div class="progress-bar progress-bar-no-arrow">
+                <div class="progress-bar-filled" style="width: 50%" data-filled="Loading 60%"></div>
+            </div>
+
+            <p>Skill 2</p>
+            <div class="progress-bar progress-bar-no-arrow">
+                <div class="progress-bar-filled" style="width: 95%" data-filled="Loading 60%"></div>
+            </div>
+
+            <p>Skill 3</p>
+            <div class="progress-bar progress-bar-no-arrow">
+                <div class="progress-bar-filled" style="width: 10%" data-filled="Loading 60%"></div>
+            </div>
+        </div>
+        <div class="right-skills">
+            <p>Skill 4</p>
+            <div class="progress-bar progress-bar-no-arrow">
+                <div class="progress-bar-filled" style="width: 70%" data-filled="Loading 60%"></div>
+            </div>
+
+            <p>Skill 5</p>
+            <div class="progress-bar progress-bar-no-arrow">
+                <div class="progress-bar-filled" style="width: 60%" data-filled="Loading 60%"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Life timeline -->
+<div class="container" id="timeline">
+    <hr />
+    <h2 class="terminal-prompt">history | grep raffaele</h2>
+    <div class="terminal-timeline">
+        <div class="terminal-card">
+            <header>👨‍💻 Event 1</header>
+            <div>
+              Description...
+            </div>
+        </div>
+        <div class="terminal-card">
+          <header>🧑‍🎓 Event 2</header>
+          <div>
+            Descritpion...
+          </div>
+        </div>
+        <div class="terminal-card">
+            <header>👨‍💻 Event 3</header>
+            <div>
+              Description...
+            </div>
+        </div>
+        <div class="terminal-card">
+          <header>🧑‍🎓 Event 4</header>
+          <div>
+            Description...
+          </div>
+        </div>
+        <div class="terminal-card">
+            <header>📜 Event 5</header>
+            <div>
+              Description...
+            </div>
+          </div>
+    </div>
+</div>
+
+<!-- Contacts -->
+<div class="container" id="contacts">
+    <hr />
+    <h2 class="terminal-prompt">ip addr show</h2>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi augue, accumsan ornare quam sed, tempus volutpat felis:
+    </p>
+    <ul>
+        <li>📱 <a href="#">Telegram</a></li>
+        <li>📷 <a href="#">Instagram</a></li>
+        <li>💼 <a href="#">Linkedin</a></li>
+        <li>🐣 <a href="#">Twitter</a></li>
+        <li>🐙 <a href="#">Github</a></li>
+    </ul>
+    <p>GPG: <code>0000 0000 0000 0000 0000 0000 0000 0000 0000 0000</code></p>
+</div>
+
+{{ end }}
