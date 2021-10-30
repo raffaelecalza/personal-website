@@ -17,8 +17,8 @@
 <!-- Welcome message -->
 <div class="container" id="welcome-msg">
     <img src="https://picsum.photos/100" alt="me" />
-    <h1>Hi there 👋, I'm Raffaele</h1>
-    <h5>"Just your friendly neighborhood developer"</h5>
+    <h1>{{ .Site.Params.welcome.message }}</h1>
+    <h5>{{ .Site.Params.welcome.quote }}</h5>
     <p><a href="#">[resume.pdf]</a></p>
 </div>
 
@@ -72,7 +72,30 @@
 <div class="container" id="skills">
     <hr />
     <h2 class="terminal-prompt">cat skills.json | jq</h2>
+    <p>
+        “Develop a passion for learning. If you do, you will never cease to grow.”<br />
+        <em style="float: right;">Anthony J. D’Angelo</em>
+    </p>
     <div>
+        <div class="left-skills">
+        {{ $leftSkills := (div (len (.Site.GetPage "section" "skills").Pages) 2) }}
+        {{ range (.Site.GetPage "section" "skills").Pages | first  $leftSkills }}
+            <p>{{ .Params.Name }}</p>
+            <div class="progress-bar progress-bar-no-arrow">
+                <div class="progress-bar-filled" style="width: {{ .Params.Level }}%"></div>
+            </div>
+        {{ end }}
+        </div>
+        <div class="right-skills">
+        {{ range after $leftSkills (.Site.GetPage "section" "skills").Pages }}
+            <p>{{ .Params.Name }}</p>
+            <div class="progress-bar progress-bar-no-arrow">
+                <div class="progress-bar-filled" style="width: {{ .Params.Level }}%"></div>
+            </div>
+        {{ end }}  
+        </div>
+    </div>
+    <!--<div>
         <div class="left-skills">
             <p>Skill 1</p>
             <div class="progress-bar progress-bar-no-arrow">
@@ -100,7 +123,7 @@
                 <div class="progress-bar-filled" style="width: 60%" data-filled="Loading 60%"></div>
             </div>
         </div>
-    </div>
+    </div>-->
 </div>
 
 <!-- Life timeline -->
