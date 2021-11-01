@@ -5,7 +5,8 @@ theme = 'custom-theme'
 
 [params]
 [params.welcome]
-    message = "Hi there 👋, I'm Raffaele"
+    message = "Hi there 👋, I'm"
+    messageSpan = "Raffaele"
     quote = "\"Just your friendly neighborhood developer\""
 
 [params.contacts]

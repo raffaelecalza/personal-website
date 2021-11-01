@@ -1,5 +1,4 @@
 /* Uncomment for dark mode */
-/*
 :root {
     --global-font-size: 15px;
     --global-line-height: 1.4em;
@@ -10,21 +9,21 @@
     --mono-font-stack: Menlo, Monaco, Lucida Console, Liberation Mono,
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
       serif;
-    --background-color: #222225;
+    --background-color: #2e3440;
     --page-width: 60em;
-    --font-color: #e8e9ed;
-    --invert-font-color: #222225;
-    --secondary-color: #a3abba;
-    --tertiary-color: #a3abba;
-    --primary-color: #62c4ff;
-    --error-color: #ff3c74;
-    --progress-bar-background: #3f3f44;
-    --progress-bar-fill: #62c4ff;
-    --code-bg-color: #3f3f44;
+    --font-color: #eceff4;
+    --invert-font-color: #3b4252;
+    --secondary-color: #8fbcbb;
+    --tertiary-color: #5e81ac;
+    --primary-color: #81a1c1;
+    --error-color: #bf616a;
+    --progress-bar-background: #4c566a;
+    --progress-bar-fill: #88c0d0;
+    --code-bg-color: #4c566a;
     --input-style: solid;
     --display-h1-decoration: none;
 }
-*/
+
 p {
     text-align: justify;
 }
@@ -54,6 +53,9 @@ p {
     width: 100%;
     text-align: center;
     display: block;
+}
+#welcome-msg h1 span {
+    color: var(--tertiary-color);
 }
 #welcome-msg p {
     text-align: center;

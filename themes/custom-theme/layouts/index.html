@@ -17,7 +17,7 @@
 <!-- Welcome message -->
 <div class="container" id="welcome-msg">
     <img src="https://picsum.photos/100" alt="me" />
-    <h1>{{ .Site.Params.welcome.message }}</h1>
+    <h1>{{ .Site.Params.welcome.message }} <span>{{ .Site.Params.welcome.messageSpan }}</span></h1>
     <h5>{{ .Site.Params.welcome.quote }}</h5>
     <p><a href="#">[resume.pdf]</a></p>
 </div>
@@ -33,34 +33,20 @@
 <div class="container" id="projects">
     <hr />
     <h2 class="terminal-prompt">ls -ahl ~/projects</h2>
-    <div class="terminal-card-container">
-        <div class="terminal-card">
-            <header>Project 1</header>
-            <div>
-                Enjoy a spot of modding from time to time. Here are a few mods for the game factorio, which is a bloody good game... <a href="#">[more]</a>
+    {{ range $index, $project := (.Site.GetPage "section" "projects").Pages }}
+        {{ if eq (mod $index 2) 0}}
+            <div class="terminal-card-container">
+        {{end}}
+            <div class="terminal-card">
+                <header>{{ $project.Params.Name }}</header>
+                <div>
+                    {{ $project.Params.tldr }}<a href="#">[more]</a>
+                </div>
             </div>
-        </div>
-        <div class="terminal-card">
-            <header>Project 2</header>
-            <div>
-                My dotfiles which follow me where ever I go! Stores my complete setup, with automated installation and management scripts. Although these may be private at the time of viewing... <a href="#">[more]</a>
+        {{ if ne (mod $index 2) 0}}
             </div>
-        </div>
-    </div>
-    <div class="terminal-card-container">
-        <div class="terminal-card">
-            <header>Project 3</header>
-            <div>
-                Enjoy a spot of modding from game... <a href="#">[more]</a>
-            </div>
-        </div>
-        <div class="terminal-card">
-            <header>Project 4</header>
-            <div>
-                My dotfiles which follow me where ever I go! Stores my complete setup, with automated installation and... <a href="#">[more]</a>
-            </div>
-        </div>
-    </div>
+        {{end}}
+    {{ end }}
 </div>
 
 <!-- Skills -->
@@ -90,35 +76,6 @@
         {{ end }}  
         </div>
     </div>
-    <!--<div>
-        <div class="left-skills">
-            <p>Skill 1</p>
-            <div class="progress-bar progress-bar-no-arrow">
-                <div class="progress-bar-filled" style="width: 50%" data-filled="Loading 60%"></div>
-            </div>
-
-            <p>Skill 2</p>
-            <div class="progress-bar progress-bar-no-arrow">
-                <div class="progress-bar-filled" style="width: 95%" data-filled="Loading 60%"></div>
-            </div>
-
-            <p>Skill 3</p>
-            <div class="progress-bar progress-bar-no-arrow">
-                <div class="progress-bar-filled" style="width: 10%" data-filled="Loading 60%"></div>
-            </div>
-        </div>
-        <div class="right-skills">
-            <p>Skill 4</p>
-            <div class="progress-bar progress-bar-no-arrow">
-                <div class="progress-bar-filled" style="width: 70%" data-filled="Loading 60%"></div>
-            </div>
-
-            <p>Skill 5</p>
-            <div class="progress-bar progress-bar-no-arrow">
-                <div class="progress-bar-filled" style="width: 60%" data-filled="Loading 60%"></div>
-            </div>
-        </div>
-    </div>-->
 </div>
 
 <!-- Life timeline -->
