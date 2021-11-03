@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="container">
+    <h1>Archive for "{{ .Section }}"</h1>
+    <h5><a href="/"><-- return to ~/</a></h5>
+    {{ $PagesLength :=  sub (len .Pages) 1 }}
+    {{ range $index, $element := .Pages }}
+    <div class="list-item">
+        <div>
+        <h3>
+            {{ add $index 1 }}. {{ .Params.Name }}
+        </h3>
+        {{ if .Params.opensource }}
+        <span class="label label-opensource">Open source</span>
+        {{ end }}
+    </div>
+        <p class="small">
+            #️⃣ Hash: <code>{{ md5 .Params.Name }}</code>
+        </p>
+        <p class="small">
+            🔗 Link: {{ if .Params.Link }}<a href="{{.Params.Link}}" target="_blank">{{ .Params.Link }}</a>{{ else }}<u>no link provided</u>{{ end }}
+        </p>
+        <p class="tldr">TLDR: {{ .Params.tldr }}</p>
+        <a href="{{ $element.Permalink }}" class="btn btn-default btn-block btn-ghost">cat ./{{ replace (lower .Params.Name) " " "_" }}/README.md</a>
+        {{ if ne $index $PagesLength }}
+        <hr />
+        {{ end }}
+    </div>
+    {{ end }}
+</div>
+{{ end }}

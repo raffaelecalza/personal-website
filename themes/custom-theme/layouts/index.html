@@ -40,13 +40,14 @@
             <div class="terminal-card">
                 <header>{{ $project.Params.Name }}</header>
                 <div>
-                    {{ $project.Params.tldr }}<a href="#">[more]</a>
+                    {{ $project.Params.tldr }}<a href="{{ .Permalink }}">[more]</a>
                 </div>
             </div>
         {{ if ne (mod $index 2) 0}}
             </div>
         {{end}}
     {{ end }}
+    <a href="/projects" class="btn btn-primary btn-block btn-ghost">Browse all projects --></a>
 </div>
 
 <!-- Skills -->
@@ -85,7 +86,7 @@
     <div class="terminal-timeline">
         {{ range sort ((.Site.GetPage "section" "events").Pages) ".Params.sort" }}
         <div class="terminal-card">
-            <header>{{ .Params.emoji }} {{ .Params.time }}</header>
+            <header>{{ .Params.emoji }} {{ .Params.time }} [6adfb]</header>
             <div>
                 <p>
                     <strong>{{ .Title }}</strong>
