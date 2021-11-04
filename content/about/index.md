@@ -1,5 +1,8 @@
 ---
 title: "Whoami"
+_build:
+    list: false
+    render: false
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi augue, accumsan ornare quam sed, tempus volutpat felis. Donec elementum congue nulla quis finibus. Pellentesque mollis dui ut augue tempus congue. Ut sed enim id magna porttitor malesuada. Donec sem lectus, hendrerit nec ante vel, rhoncus congue eros. Duis in aliquet lacus. Integer in sem condimentum, aliquam lectus vel, eleifend nulla. Pellentesque imperdiet, erat in auctor auctor, augue lacus pharetra justo, in finibus quam ex eu leo. Sed lobortis pharetra mi, non congue nisl fermentum ultricies.
 
