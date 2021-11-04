@@ -1,18 +1,19 @@
 {{ define "main" }}
 <div class="container">
+    <h5 class="back-link"><a href="/"><-- return to ~/</a></h5>
     <h1>Archive for "{{ .Section }}"</h1>
-    <h5><a href="/"><-- return to ~/</a></h5>
-    {{ $PagesLength :=  sub (len .Pages) 1 }}
+    <p>
+        Below you can find all the items related to {{ .Section }}. Click on the <code>cat</code> button to open the description of the item.
+    </p>
     {{ range $index, $element := .Pages }}
     <div class="list-item">
-        <div>
+        <hr />
         <h3>
             {{ add $index 1 }}. {{ .Params.Name }}
         </h3>
         {{ if .Params.opensource }}
         <span class="label label-opensource">Open source</span>
         {{ end }}
-    </div>
         <p class="small">
             #️⃣ Hash: <code>{{ md5 .Params.Name }}</code>
         </p>
@@ -21,9 +22,6 @@
         </p>
         <p class="tldr">TLDR: {{ .Params.tldr }}</p>
         <a href="{{ $element.Permalink }}" class="btn btn-default btn-block btn-ghost">cat ./{{ replace (lower .Params.Name) " " "_" }}/README.md</a>
-        {{ if ne $index $PagesLength }}
-        <hr />
-        {{ end }}
     </div>
     {{ end }}
 </div>
