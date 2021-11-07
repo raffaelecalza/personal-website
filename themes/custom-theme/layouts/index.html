@@ -1,6 +1,6 @@
 {{ define "main" }}
 <!-- Navbar -->
-<div class="container">
+<div class="container" id="menu">
     <div class="terminal-nav">
         <nav class="terminal-menu">
         <ul>
@@ -20,6 +20,7 @@
     <h1>{{ .Site.Params.welcome.message }} <span>{{ .Site.Params.welcome.messageSpan }}</span></h1>
     <h5>{{ .Site.Params.welcome.quote }}</h5>
     <p><a href="#">[resume.pdf]</a></p>
+    <p id="scroll-down-msg">Scroll down to continue...</p>
 </div>
 
 <!-- About me description with interests -->

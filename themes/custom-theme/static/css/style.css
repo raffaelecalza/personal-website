@@ -80,6 +80,9 @@ p {
 #welcome-msg p {
     text-align: center;
 }
+#scroll-down-msg {
+    display: none;
+}
 
 /* About me */
 #whoami {
@@ -155,4 +158,65 @@ List
 
 .list-item .tldr {
     margin-top: 25px;
+}
+
+/***
+Responsive fix
+***/
+@media screen and (max-width: 550px) {
+    /* Menu */
+    #menu {
+        display: none;
+    }
+    #welcome-msg {
+        height: 100vh;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    #scroll-down-msg {
+        position: absolute;
+        bottom: 10px;
+    }
+    h2.terminal-prompt {
+        font-size: 1.3em;
+    }
+    #skills > div {
+        flex-direction: column;
+    }
+    #skills div.left-skills {
+        width: 100%;
+        float: none;
+        clear: none;
+    }
+    #skills div.right-skills {
+        width: 100%;
+        float: none;
+    }
+    .terminal-card-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        margin-bottom: 25px;
+    }
+    .terminal-card-container .terminal-card:first-child {
+        margin-bottom: 25px;
+        margin-right: 0px;
+    }
+    #timeline .terminal-timeline .terminal-card {
+        width: 100%;
+        margin-top: 25px!important;
+    }
+    .terminal-timeline::before {
+        left: 15px;
+    }
+    .terminal-timeline {
+        padding-left: 40px;
+    }
+    .terminal-timeline .terminal-card::before {
+        left: 6px;
+    }
 }
