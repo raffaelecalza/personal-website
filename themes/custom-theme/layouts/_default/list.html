@@ -21,7 +21,7 @@
             🔗 Link: {{ if .Params.Link }}<a href="{{.Params.Link}}" target="_blank">{{ .Params.Link }}</a>{{ else }}<u>no link provided</u>{{ end }}
         </p>
         <p class="tldr">TLDR: {{ .Params.tldr }}</p>
-        <a href="{{ $element.Permalink }}" class="btn btn-default btn-block btn-ghost">cat ./{{ replace (lower .Params.Name) " " "_" }}/README.md</a>
+        <a href="{{ $element.Permalink }}" class="btn btn-default btn-block btn-ghost">cd ./{{ replace (lower .Params.Name) " " "_" }}</a>
     </div>
     {{ end }}
 </div>

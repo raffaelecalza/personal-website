@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="container">
     <h5 class="back-link"><a href="{{ (.GetPage "projects").Permalink }}"><-- return to ~/{{ .Section }}</a></h5>
-    <h1 class="terminal-prompt">cat ./{{ replace (lower .Params.Name) " " "_" }}/README.md</h1>
+    <h1 class="terminal-prompt">cat ./README.md</h1>
     <p class="small">
         #️⃣ Hash: <code>{{ md5 .Params.Name }}</code>
     </p>
