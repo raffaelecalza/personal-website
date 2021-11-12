@@ -15,10 +15,13 @@
         🏎 TLDR: {{ .Params.tldr }}
     </p>
     <hr />
-    {{ if .Content }}
-        {{ .Content }}
-    {{ else }}
-        <p><strong>NO CONTENT PROVIDED...</strong></p>
-    {{ end }}
+    <div class="single-content">
+        {{ if .Content }}
+            <h1>{{ .Params.Name }}</h1>
+            {{ .Content }}
+        {{ else }}
+            <p><strong>NO CONTENT PROVIDED...</strong></p>
+        {{ end }}
+    </div>
 </div>
 {{ end }}
