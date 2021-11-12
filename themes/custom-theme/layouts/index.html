@@ -19,7 +19,7 @@
     <img src="https://picsum.photos/100" alt="me" />
     <h1>{{ .Site.Params.welcome.message }} <span>{{ .Site.Params.welcome.messageSpan }}</span></h1>
     <h5>{{ .Site.Params.welcome.quote }}</h5>
-    <p><a href="#">[resume.pdf]</a></p>
+    <p><a data-micromodal-trigger="modal-1">[resume.pdf]</a></p>
     <p id="scroll-down-msg">Scroll down to continue...</p>
 </div>
 
@@ -63,7 +63,7 @@
         <div class="left-skills">
         {{ $leftSkills := (div (len (.Site.GetPage "section" "skills").Pages) 2) }}
         {{ range (.Site.GetPage "section" "skills").Pages | first  $leftSkills }}
-            <p>{{ .Params.Name }}</p>
+            <p class="progress-bar-description">{{ .Params.Name }}</p>
             <div class="progress-bar progress-bar-no-arrow">
                 <div class="progress-bar-filled" style="width: {{ .Params.Level }}%"></div>
             </div>
@@ -71,7 +71,7 @@
         </div>
         <div class="right-skills">
         {{ range after $leftSkills (.Site.GetPage "section" "skills").Pages }}
-            <p>{{ .Params.Name }}</p>
+            <p class="progress-bar-description">{{ .Params.Name }}</p>
             <div class="progress-bar progress-bar-no-arrow">
                 <div class="progress-bar-filled" style="width: {{ .Params.Level }}%"></div>
             </div>
@@ -118,5 +118,5 @@
     </ul>
     <p>GPG: <code>{{ .Site.Params.Contacts.gpg }}</code></p>
 </div>
-
+{{- partial "modals/cv.html" . -}}
 {{ end }}

@@ -52,6 +52,17 @@ p {
     margin-bottom: 0px;
 }
 
+.progress-bar-description {
+    margin-bottom: 5px;
+}
+.progress-bar {
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+.terminal-card p {
+    text-align: left;
+}
+
 /* Navbar */
 .terminal-menu ul {
     justify-content: center;
@@ -104,6 +115,7 @@ p {
 /* Skills */
 #skills > div {
     display: flex;
+    padding-top: 20px;
 }
 
 #skills div.left-skills {
@@ -111,6 +123,7 @@ p {
     float: left;
     clear: none;
     padding: 0px 10px;
+    padding-right: 20px;
 }
 
 #skills div.right-skills {
@@ -118,6 +131,11 @@ p {
     float: left;
     clear: none;
     padding: 0px 10px;
+    padding-left: 20px;
+}
+
+#skills div.left-skills .progress-bar:last-child, #skills div.right-skills .progress-bar:last-child {
+    margin-bottom: 0px;
 }
 
 /* Timeline */
@@ -179,6 +197,7 @@ Responsive fix
     #scroll-down-msg {
         position: absolute;
         bottom: 10px;
+        display: block;
     }
     h2.terminal-prompt {
         font-size: 1.3em;
@@ -190,10 +209,15 @@ Responsive fix
         width: 100%;
         float: none;
         clear: none;
+        padding-right: 0px;
+        padding-left: 0px;
     }
     #skills div.right-skills {
+        margin-top: 30px;
         width: 100%;
         float: none;
+        padding-left: 0px;
+        padding-right: 0px;
     }
     .terminal-card-container {
         display: flex;
@@ -219,4 +243,112 @@ Responsive fix
     .terminal-timeline .terminal-card::before {
         left: 6px;
     }
+}
+/*** Modal ***/
+.modal__overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(0,0,0,.70);
+    display:flex;
+    justify-content:center;
+    padding:1rem;
+    align-items:center
+   }
+   .modal__container {
+    background-color:var(--background-color);
+    padding:calc(var(--global-space) * 3);
+    min-width: 50%;
+    max-width:95%;
+    max-height: 90vh;
+    border-radius:0;
+    overflow-y:auto;
+    box-sizing:border-box;
+    border:1px solid var(--secondary-color);
+    box-shadow:3px 3px 0 0 var(--secondary-color);
+   }
+   .modal__header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center
+   }
+   .modal__title {
+    margin-top:0;
+    margin-bottom:0;
+    font-weight:600;
+    margin-right: 30px;
+    font-size:1.25rem;
+    line-height:1.25;
+    color:var(--primary-color);
+    box-sizing:border-box
+   }
+   .modal__close {
+    background:0 0;
+    border:0;
+    font-size:var(--global-font-size);
+    color:var(--secondary-color);
+    font-family:var(--font-stack);
+    cursor: pointer;
+   }
+    .modal__header .modal__close:hover:before {
+       background-color: var(--secondary-color);
+       color: var(--font-color);
+   }
+   .modal__header .modal__close:before {
+    content:"[esc]"
+   }
+   .modal__content {
+    margin-top: 30px;
+    margin-bottom:var(--global-space);
+    color:var(--global-font-color)
+   }
+@keyframes mmfadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+@keyframes mmfadeOut {
+    from { opacity: 1; }
+      to { opacity: 0; }
+}
+
+@keyframes mmslideIn {
+  from { transform: translateY(15%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes mmslideOut {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10%); }
+}
+
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: block;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay {
+  animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+  animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+  animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+  animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: transform;
 }
