@@ -39,7 +39,7 @@ p {
     content: "$ ";
 }
 
-.terminal-prompt {
+.terminal-prompt, h1, h2, h3, h4, h5, h6 {
     color: var(--tertiary-color);
 }
 
@@ -61,6 +61,30 @@ p {
 }
 .terminal-card p {
     text-align: left;
+}
+
+.highlight {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.highlight pre {
+    background-color: var(--code-bg-color)!important;
+}
+
+.highlight pre code:before, .highlight pre code:after {
+    display: none;
+}
+
+.chroma {
+    margin: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 12px;
+}
+
+div.chroma {
+    padding: 0px;
 }
 
 /* Navbar */
@@ -195,6 +219,18 @@ List
 
 .single-content p {
     text-align: left;
+    margin-bottom: 0px;
+}
+
+.single-content ul {
+    margin-top: 10px;
+}
+
+.single-content ul li {
+    margin-bottom: 2px;
+}
+
+.single-content ul li:last-child {
     margin-bottom: 0px;
 }
 
