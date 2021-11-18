@@ -35,7 +35,7 @@
     <hr />
     <h2 class="terminal-prompt">ls -ahl ~/projects</h2>
     {{ range $index, $project := (.Site.GetPage "section" "projects").Pages }}
-        {{ if eq (mod $index 2) 0}}
+        {{ if eq (mod $index 2) 0 }}
             <div class="terminal-card-container">
         {{end}}
             <div class="terminal-card">
@@ -44,7 +44,7 @@
                     {{ $project.Params.tldr }}<a href="{{ .Permalink }}">[more]</a>
                 </div>
             </div>
-        {{ if ne (mod $index 2) 0}}
+        {{ if or (ne (mod $index 2) 0) (eq $index (sub (len (.Site.GetPage "section" "projects").Pages) 1)) }}
             </div>
         {{end}}
     {{ end }}
@@ -87,7 +87,7 @@
     <div class="terminal-timeline">
         {{ range sort ((.Site.GetPage "section" "events").Pages) ".Params.sort" }}
         <div class="terminal-card">
-            <header>{{ .Params.emoji }} {{ .Params.time }} [6adfb]</header>
+            <header><span style="font-size: 25px;">{{ .Params.emoji }}</span> {{ .Params.time }}</header>
             <div>
                 <p>
                     <strong>{{ .Title }}</strong>

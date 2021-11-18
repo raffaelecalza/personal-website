@@ -132,8 +132,8 @@ div.chroma {
     align-items: stretch;
     margin-bottom: 25px;
 }
-.terminal-card-container .terminal-card:first-child {
-    margin-right: 10px;
+.terminal-card-container .terminal-card:nth-child(2) {
+    margin-left: 10px;
 }
 
 /* Skills */
