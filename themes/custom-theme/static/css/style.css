@@ -83,8 +83,9 @@ p {
     font-size: 12px;
 }
 
-div.chroma {
-    padding: 0px;
+.chroma code {
+    overflow-x: hidden;
+    line-height: 1.6;
 }
 
 /* Navbar */

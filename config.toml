@@ -4,7 +4,17 @@ title = '$ you@raffaelecalza: ~/'
 theme = 'custom-theme'
 [markup]
 [markup.highlight]
-    noClasses=false
+    anchorLineNos = true
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+    style = 'monokai'
+    tabWidth = 4
 
 [params]
 [params.welcome]
