@@ -141,6 +141,7 @@ p {
 #skills > div {
     display: flex;
     padding-top: 20px;
+    font-size: 13px;
 }
 
 #skills div.left-skills {

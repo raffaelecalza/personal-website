@@ -1,7 +1,6 @@
 baseURL = 'https://raffaelecalza.me'
 languageCode = 'it-it'
 title = '$ you@raffaelecalza: ~/'
-theme = 'custom-theme'
 [markup]
 [markup.highlight]
     anchorLineNos = true
