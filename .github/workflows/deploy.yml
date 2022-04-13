@@ -1,0 +1,24 @@
+name: Pages
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Init repo
+        uses: actions/checkout@v3
+      - name: Setup Hugo (v0.96.0)
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.96.0'
+      - name: Build website
+        run: hugo --minify
+      - name: Deploy to GH Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
