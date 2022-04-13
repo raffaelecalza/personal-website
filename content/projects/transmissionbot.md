@@ -1,6 +1,6 @@
 ---
-name: Transmission Telegram Bot
-tldr: 🤖 Simple telegram bot that controls the status of your torrents 
+name: transmission-telegram-bot
+tldr: Simple telegram bot that controls the status of your torrents 
 opensource: true
 link: https://github.com/raffaelecalza/transmission-telegram-bot
 ---

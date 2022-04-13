@@ -1,9 +1,15 @@
 ---
 name: pusher-status
-tldr: 🔔 Simple node client for Pusher's Status Page
+tldr: Simple node client for Pusher's Status Page
 opensource: true
 link: https://github.com/raffaelecalza/pusher-status
 ---
+
+[![npm version](https://img.shields.io/npm/v/pusher-status?style=flat-square)](https://www.npmjs.com/package/pusher-status)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
+![Github build status](https://img.shields.io/github/workflow/status/raffaelecalza/pusher-status/CI?style=flat-square)
+[![License MIT](https://img.shields.io/github/license/raffaelecalza/pusher-status?style=flat-square)](https://github.com/raffaelecalza/pusher-status/blob/master/LICENSE)
+
 This library returns the status of Pusher's components using the data from the [status page](https://status.pusher.com/) of Pusher.
 
 ## Installation
