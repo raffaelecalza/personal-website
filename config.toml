@@ -21,7 +21,7 @@ disableKinds = ["sitemap", "RSS", "taxonomy", "taxonomyTerm"]
 [params.welcome]
     message = "Hi there 👋, I'm"
     messageSpan = "Raffaele"
-    quote = "CyberSec student, technology enthusiast and command line lover"
+    quote = "CyberSec student, technology enthusiast and cli lover"
 
 [params.contacts]
     gpg = "A004 55C8 2518 4242 D0EB 5536 6B1C 539C 8990 1933"
