@@ -1,6 +1,8 @@
 baseURL = 'https://raffaelecalza.me'
-languageCode = 'it-it'
-title = '$ you@raffaelecalza: ~/'
+languageCode = 'en-en'
+title = "raffaele."
+disableKinds = ["sitemap", "RSS", "taxonomy", "taxonomyTerm"]
+
 [markup]
 [markup.highlight]
     anchorLineNos = true
@@ -19,12 +21,12 @@ title = '$ you@raffaelecalza: ~/'
 [params.welcome]
     message = "Hi there 👋, I'm"
     messageSpan = "Raffaele"
-    quote = "\"Just your friendly neighborhood developer\""
+    quote = "CyberSec student, technology enthusiast and command line lover"
 
 [params.contacts]
-    gpg = "0000 0000 0000 0000 0000 0000 0000 0000 0000 0000"
-    telegram = "#"
-    instagram = "#"
-    linkedin = "#"
-    twitter = "#"
-    github = "#"
+    gpg = "A004 55C8 2518 4242 D0EB 5536 6B1C 539C 8990 1933"
+    gpgUrl = "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x6B1C539C89901933"
+    telegram = "@raffaelecalza"
+    linkedin = "https://www.linkedin.com/in/raffaelecalza/"
+    twitter = "https://twitter.com/raffaelecalza"
+    github = "https://github.com/raffaelecalza"
