@@ -1,7 +1,6 @@
 <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
-<script>
-    MicroModal.init({
-        awaitOpenAnimation: true,
-        awaitCloseAnimation: true
-    })
-</script>
+{{ if eq .Title .Site.Title }}
+<script src="{{ (resources.Get "js/home.js" | minify).RelPermalink }}"></script>
+{{ else }}
+<script src="{{ (resources.Get "js/others.js" | minify).RelPermalink }}"></script>
+{{ end }}

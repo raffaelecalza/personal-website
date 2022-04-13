@@ -14,25 +14,46 @@
     --font-color: #f8f8f2;
     --invert-font-color: #303030;
     --secondary-color: #05d9e8;
-    --tertiary-color: #d1f7ff;
+    --tertiary-color: var(--font-color);
     --primary-color: #ff2a6d;
     --error-color: #ec0e33;
     --progress-bar-background: #303030;
-    --progress-bar-fill: #ff2a6d;
+    --progress-bar-fill: var(--primary-color);
     --code-bg-color: #303030;
     --input-style: solid;
     --display-h1-decoration: none;
 }
+
+html {
+    scroll-behavior: smooth!important;
+}
+
 body {
     min-height: 100vh;
 }
 
-div div:nth-child(even) hr, .list-item:nth-child(even) hr {
-    border-color: var(--primary-color);
+hr {
+    border-bottom: 2px solid #444444;
 }
+
+/*div:nth-child(even) > hr, footer:nth-child(even) > hr {
+    border-color: var(--primary-color);
+}*/
 
 p {
     text-align: justify;
+}
+
+.primary {
+    color: var(--primary-color);
+}
+
+.secondary {
+    color: var(--secondary-color);
+}
+
+.terminal-prompt-spaced {
+    margin-top: 20px!important;
 }
 
 .terminal-prompt::before {
@@ -50,6 +71,7 @@ p {
 .back-link {
     margin-top: 25px;
     margin-bottom: 0px;
+    text-align: right;
 }
 
 .progress-bar-description {
@@ -140,7 +162,6 @@ p {
 /* Skills */
 #skills > div {
     display: flex;
-    padding-top: 20px;
     font-size: 13px;
 }
 
@@ -160,19 +181,53 @@ p {
     padding-left: 20px;
 }
 
+.progress-bar-description {
+    text-align: left;
+}
+
 #skills div.left-skills .progress-bar:last-child, #skills div.right-skills .progress-bar:last-child {
     margin-bottom: 0px;
 }
 
-/* Timeline */
-#timeline .terminal-timeline .terminal-card {
+/* history */
+#history .terminal-timeline .terminal-card {
     width: 90%;
     margin-top: 25px!important;
 }
 
+#history .terminal-timeline .terminal-card p {
+margin-bottom: 0px;
+}
+
+/* contacts */
+#contacts pre {
+    border: 0px;
+    color: var(--font-color);
+    margin: 0px;
+    padding: 0px;
+}
+
+#contacts pre span {
+    font-size: 13px;
+    /*border-bottom: 2px solid var(--primary-color);*/
+}
+
+#contacts pre .secondary {
+    border-bottom: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    font-size: var(--global-font-size);
+}
+
 /* Footer */
 footer {
-    margin-top: 150px!important;
+    margin-top: 70px!important;
+    margin-bottom: 30px!important;
+    color: var(--tertiary-color);
+}
+
+footer p {
+    text-align: center;
 }
 
 /****
@@ -180,8 +235,9 @@ List
 ****/
 .list-item h3 {
     padding-top: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     display: inline-block;
+    color: var(--primary-color);
 }
 
 .small {
@@ -190,9 +246,9 @@ List
 }
 
 .label {
-    font-size: 13px;
+    font-size: 12px;
     display: inline-block;
-    padding: 2px 13px;
+    padding: 0px 13px;
     border-radius: 15px;
 }
 
@@ -288,18 +344,22 @@ Responsive fix
         margin-bottom: 25px;
         margin-right: 0px;
     }
-    #timeline .terminal-timeline .terminal-card {
+    #history .terminal-history .terminal-card {
         width: 100%;
         margin-top: 25px!important;
     }
-    .terminal-timeline::before {
+    .terminal-history::before {
         left: 15px;
     }
-    .terminal-timeline {
+    .terminal-history {
         padding-left: 40px;
     }
-    .terminal-timeline .terminal-card::before {
+    .terminal-history .terminal-card::before {
         left: 6px;
+    }
+    .modal__container {
+        max-width: 100%;
+        width: 100%;
     }
 }
 /*** Modal ***/

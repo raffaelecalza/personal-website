@@ -1,19 +1,13 @@
 {{ define "main" }}
 <div class="container">
-    <h5 class="back-link"><a href="{{ (.GetPage "projects").Permalink }}"><-- return to ~/{{ .Section }}</a></h5>
-    <h1 class="terminal-prompt">cat ./README.md</h1>
-    <p class="small">
-        #️⃣ Hash: <code>{{ md5 .Params.Name }}</code>
-    </p>
-    <p class="small">
-        🔗 Link: {{ if .Params.Link }}<a href="{{.Params.Link}}" target="_blank">{{ .Params.Link }}</a>{{ else }}<u>no link provided</u>{{ end }}
-    </p>
-    <p class="small">
-        👓 Reading time: {{ .ReadingTime }} minuti
-    </p>
-    <p class="small">
-        🏎 TLDR: {{ .Params.tldr }}
-    </p>
+    <h5 class="back-link"><a href="{{ (.GetPage "projects").RelPermalink }}">~/{{ .Section }}</a></h5>
+    <h2 class="terminal-prompt terminal-prompt-spaced">cat {{ replace (lower .Params.Name) " " "_" }}.txt</h2>
+    <ul class="small">
+        <li><strong>Hash:</strong> <code>{{ md5 .Params.Name }}</code></li>
+        <li><strong>Link:</strong> {{ if .Params.Link }}<a href="{{.Params.Link}}" target="_blank">{{ .Params.Link }}</a>{{ else }}<u>no link provided</u>{{ end }}</li>
+        <li><strong>Reading time:</strong> {{ .ReadingTime }} minuti</li>
+        <li><strong>TLDR:</strong> {{ .Params.tldr }}</li>
+    </ul>
     <hr />
     <div class="single-content">
         {{ if .Content }}
