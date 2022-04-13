@@ -24,7 +24,7 @@
         </ul>
         
         <p class="tldr">{{ .Params.tldr }}</p>
-        <a href="{{ $element.RelPermalink }}" class="btn btn-default btn-block btn-ghost">cat {{ replace (lower .Params.Name) " " "_" }}.txt</a>
+        <a href="{{ $element.RelPermalink }}" class="btn btn-default btn-block btn-ghost">cd {{ replace (lower .Params.Name) " " "_" }}/</a>
         {{ if ne $index (sub (len $.Pages) 1) }}
         <hr />
         {{ end }}

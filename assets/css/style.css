@@ -299,6 +299,11 @@ List
     margin-bottom: 0px;
 }
 
+.single-content * img {
+    width: auto;
+    max-width: 100%;
+}
+
 /***
 Responsive fix
 ***/
