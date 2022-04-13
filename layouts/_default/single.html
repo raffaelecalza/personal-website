@@ -3,10 +3,11 @@
     <h5 class="back-link"><a href="{{ (.GetPage "projects").RelPermalink }}">~/{{ .Section }}</a></h5>
     <h2 class="terminal-prompt terminal-prompt-spaced">cat readme.txt</h2>
     <ul class="small">
-        <li><strong>Hash:</strong> <code>{{ md5 .Params.Name }}</code></li>
         <li><strong>Link:</strong> {{ if .Params.Link }}<a href="{{.Params.Link}}" target="_blank">{{ .Params.Link }}</a>{{ else }}<u>no link provided</u>{{ end }}</li>
-        <li><strong>Reading time:</strong> {{ .ReadingTime }} minuti</li>
-        <li><strong>TLDR:</strong> {{ .Params.tldr }}</li>
+        <li><strong>Reading time:</strong> {{ .ReadingTime }} minutes</li>
+        {{ if .Params.opensource }}
+        <li><strong>open source ❤️</strong></li>
+        {{ end }}
     </ul>
     <hr />
     <div class="single-content">
