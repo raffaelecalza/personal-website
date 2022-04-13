@@ -1,0 +1,122 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>raffaele.</title><link rel=stylesheet href=https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css><link rel=stylesheet type=text/css href=/css/code.min.css><link rel=stylesheet type=text/css href=/css/style.min.css></head><body><div id=content><div class=container><h5 class=back-link><a href=/projects/>~/projects</a></h5><h2 class="terminal-prompt terminal-prompt-spaced">cat readme.txt</h2><ul class=small><li><strong>Link:</strong> <a href=https://github.com/raffaelecalza/pusher-status target=_blank>https://github.com/raffaelecalza/pusher-status</a></li><li><strong>Reading time:</strong> 3 minutes</li><li><strong>open source ❤️</strong></li></ul><hr><div class=single-content><h1>pusher-status</h1><p><a href=https://www.npmjs.com/package/pusher-status><img src="https://img.shields.io/npm/v/pusher-status?style=flat-square" alt="npm version"></a>
+<a href=https://standardjs.com><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square" alt="JavaScript Style Guide"></a>
+<img src="https://img.shields.io/github/workflow/status/raffaelecalza/pusher-status/CI?style=flat-square" alt="Github build status">
+<a href=https://github.com/raffaelecalza/pusher-status/blob/master/LICENSE><img src="https://img.shields.io/github/license/raffaelecalza/pusher-status?style=flat-square" alt="License MIT"></a></p><p>This library returns the status of Pusher&rsquo;s components using the data from the <a href=https://status.pusher.com/>status page</a> of Pusher.</p><h2 id=installation>Installation</h2><p>Open a terminal inside your project and type:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>npm i --save pusher-status
+</span></span></code></pre></div><h2 id=usage>Usage</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>Pusher</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;pusher-status&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>Pusher</span><span class=p>.</span><span class=nx>status</span><span class=p>((</span><span class=nx>err</span><span class=p>,</span> <span class=nx>res</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>err</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// process error
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`Status = </span><span class=si>${</span><span class=nx>res</span><span class=p>.</span><span class=nx>status</span><span class=si>}</span><span class=sb>`</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`Numbers of components correctly working = </span><span class=si>${</span><span class=nx>res</span><span class=p>[</span><span class=s1>&#39;components&#39;</span><span class=p>][</span><span class=s1>&#39;operational&#39;</span><span class=p>].</span><span class=nx>length</span><span class=si>}</span><span class=sb>`</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>res</span><span class=p>.</span><span class=nx>status</span> <span class=o>!=</span> <span class=s1>&#39;OK&#39;</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`Numbers of components not working = </span><span class=si>${</span><span class=nx>res</span><span class=p>[</span><span class=s1>&#39;components&#39;</span><span class=p>][</span><span class=s1>&#39;outage&#39;</span><span class=p>].</span><span class=nx>lenght</span><span class=si>}</span><span class=sb>`</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>})</span>
+</span></span></code></pre></div><h2 id=components>Components</h2><p>Inside Pusher&rsquo;s Status Page you can find the following components:</p><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>Channels REST API</td><td>The API your servers use to publish messages and query channel state, described here: <a href=https://pusher.com/docs/rest_api>https://pusher.com/docs/rest_api</a></td></tr><tr><td>Channels WebSocket client API</td><td>The API which Pusher Channels end-users connect to, generally for subscribing to events</td></tr><tr><td>Channels Dashboard</td><td>dashboard.pusher.com: Where you can view statistics and manage your apps.</td></tr><tr><td>Channels Stats Integrations</td><td>Integration of Pusher Channels with Datadog and other 3rd party providers</td></tr><tr><td>Channels presence channels</td><td><em>No description provided</em></td></tr><tr><td>Channels Webhooks</td><td><em>No description provided</em></td></tr><tr><td>Channels Pusher.js CDN</td><td>The CDN backing js.pusher.com, serving the javascript client library to end users.</td></tr><tr><td>Beams</td><td><em>No description provided</em></td></tr><tr><td>Beams dashboard</td><td><em>No description provided</em></td></tr><tr><td>Marketing Website</td><td>The website at <a href=https://www.pusher.com>www.pusher.com</a></td></tr><tr><td>Payment API</td><td>The API that handle charging, plan upgrade, downgrade and cancellation</td></tr></tbody></table><h2 id=examples>Examples</h2><p>You can also find the <code>.json</code> files of the examples below inside the <code>/examples</code> folder.</p><h3 id=all-operational>All operational</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;status&#34;</span><span class=p>:</span> <span class=s2>&#34;OK&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;components&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nt>&#34;operational&#34;</span><span class=p>:</span> <span class=p>[{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Channels REST API&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;The API your servers use to publish messages and query channel state, described here: https://pusher.com/docs/rest_api&#34;</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Channels WebSocket client API&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>2</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;The API which Pusher Channels end-users connect to, generally for subscribing to events&#34;</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Channels Dashboard&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>3</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;dashboard.pusher.com: Where you can view statistics and manage your apps.&#34;</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Channels Stats Integrations&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>4</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;Integration of Pusher Channels with Datadog and other 3rd party providers&#34;</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Channels presence channels&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>5</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=kc>null</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Channels Webhooks&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>6</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=kc>null</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Channels Pusher.js CDN&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>7</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;The CDN backing js.pusher.com, serving the javascript client library to end users.&#34;</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Beams&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>8</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=kc>null</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Chatkit&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>9</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=kc>null</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Marketing Website&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>10</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;The website at www.pusher.com&#34;</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Payment API&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>11</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;The API that handle charging, plan upgrade, downgrade and cancellation&#34;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}],</span>
+</span></span><span class=line><span class=cl>		<span class=nt>&#34;outage&#34;</span><span class=p>:</span> <span class=p>[]</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><h3 id=some-not-working>Some not working</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;status&#34;</span><span class=p>:</span> <span class=s2>&#34;ERROR&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nt>&#34;components&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nt>&#34;operational&#34;</span><span class=p>:</span> <span class=p>[{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Channels REST API&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;The API your servers use to publish messages and query channel state, described here: https://pusher.com/docs/rest_api&#34;</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Channels WebSocket client API&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>2</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;The API which Pusher Channels end-users connect to, generally for subscribing to events&#34;</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Channels Dashboard&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>3</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;dashboard.pusher.com: Where you can view statistics and manage your apps.&#34;</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Channels Stats Integrations&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>4</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;Integration of Pusher Channels with Datadog and other 3rd party providers&#34;</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Channels presence channels&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>5</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=kc>null</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Channels Webhooks&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>6</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=kc>null</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Channels Pusher.js CDN&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>7</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;The CDN backing js.pusher.com, serving the javascript client library to end users.&#34;</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Beams&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>8</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=kc>null</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Chatkit&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>9</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=kc>null</span>
+</span></span><span class=line><span class=cl>		<span class=p>}],</span>
+</span></span><span class=line><span class=cl>		<span class=nt>&#34;outage&#34;</span><span class=p>:</span> <span class=p>[{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Marketing Website&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>10</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;The website at www.pusher.com&#34;</span>
+</span></span><span class=line><span class=cl>		<span class=p>},</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Payment API&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;position&#34;</span><span class=p>:</span> <span class=mi>11</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>			<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;The API that handle charging, plan upgrade, downgrade and cancellation&#34;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}]</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div></div></div></div><footer class=container><hr><p class="small center">&copy; 2022 | Built with ❤️ and a lot of ☕ | <a href=#>[t]op</a></p></footer><script src=https://unpkg.com/micromodal/dist/micromodal.min.js></script>
+<script src=/js/others.min.js></script></body></html>
