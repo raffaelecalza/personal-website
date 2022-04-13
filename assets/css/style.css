@@ -32,6 +32,13 @@ body {
     min-height: 100vh;
 }
 
+#not-found {
+    text-align: center;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
 hr {
     border-bottom: 2px solid #444444;
 }
