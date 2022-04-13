@@ -1,5 +1,5 @@
 ---
-name: Git and Github
+name: Git / Github / BitBucket
 level: 85
 notes:
 ---
