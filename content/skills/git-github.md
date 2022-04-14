@@ -1,5 +1,5 @@
 ---
 name: Git / Github / BitBucket
-level: 85
+level: 80
 notes:
 ---

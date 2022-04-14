@@ -1,5 +1,5 @@
 ---
-name: MySQL / PostgreSQL / MongoDB
-level: 59
+name: PostgreSQL / MongoDB
+level: 50
 notes:
 ---
