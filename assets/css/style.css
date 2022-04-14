@@ -93,8 +93,8 @@ hr {
     margin-bottom: 30px;
 }
 
-.highlight pre {
-    background-color: var(--code-bg-color)!important;
+.highlight code {
+    background-color: rgb(22, 22, 22);
 }
 
 .highlight pre code:before, .highlight pre code:after {
@@ -106,6 +106,7 @@ hr {
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 12px;
+    border-color: var(--primary-color);
 }
 
 .chroma code {
