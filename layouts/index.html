@@ -88,22 +88,22 @@
     <hr />
     <h2 class="terminal-prompt">ifconfig</h2>
     <pre><strong><span>tg:</span></strong>
-      name = telegram
-      username <span class="secondary">{{ .Site.Params.Contacts.telegram }}</span>
-      category: chat
+    name = telegram
+    username <span class="secondary">{{ .Site.Params.Contacts.telegram }}</span>
+    category: chat
 
 <strong><span>gpg:</span></strong>
-      name = <a href="{{ .Site.Params.Contacts.gpgUrl }}">gpg</a>
-      fingerprint <span class="secondary">{{ .Site.Params.Contacts.gpg }}</span>
-      category: chat
+    name = <a href="{{ .Site.Params.Contacts.gpgUrl }}">gpg</a>
+    fingerprint <span class="secondary">{{ .Site.Params.Contacts.gpg }}</span>
+    category: pub-key
 
 <strong><span>tw:</span></strong>
-      name = <a href="{{ .Site.Params.Contacts.twitter }}">twitter</a>
-      category: social
+    name = <a href="{{ .Site.Params.Contacts.twitter }}">twitter</a>
+    category: social
 
 <strong><span>ln:</span></strong>
-      name = <a href="{{ .Site.Params.Contacts.linkedin }}">linkedin</a>
-      category: social
+    name = <a href="{{ .Site.Params.Contacts.linkedin }}">linkedin</a>
+    category: social
     </pre>
 </div>
 {{- partial "modals/cv.html" . -}}
