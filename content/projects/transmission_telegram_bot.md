@@ -69,7 +69,7 @@ For running your bot forever and as a daemon, you have to install a simple libra
 Now, open the config.json file with a text editor. Replace the token string with your bot's token. If you already know your chats id insert it in the array.
 In the transmission section, insert the ip address of the computer where transmission is installed (localhost if the bot runs in the same machine). Insert your username and password if you've set it, otherwise leave this fileds empty (don't delete them). The last step is to specify the number of the port (if you have changed it).
 
-```javascript
+```json
 {
   "bot": {
       "token": "your bot's token",

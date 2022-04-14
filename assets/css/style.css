@@ -106,7 +106,9 @@ hr {
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 12px;
-    border-color: var(--primary-color);
+    border-color: var(--secondary-color);
+    box-sizing:border-box;
+    box-shadow:3px 3px 0 0 var(--secondary-color);
 }
 
 .chroma code {
@@ -144,7 +146,41 @@ hr {
 }
 #scroll-down-msg {
     display: none;
+    width: 100%;
 }
+#scroll-down-msg a, #scroll-down-msg a:hover, #scroll-down-msg a:focus, #scroll-down-msg a:active {
+    color: var(--font-color)!important;
+    background-color: var(--background-color)!important;
+}
+#scroll-down-msg a {
+    padding-right: 20px;
+}
+
+#scroll-down-msg a::after {
+    content: "...";
+    position: absolute;
+    animation: dots 2s infinite linear;
+}
+
+@keyframes dots {
+    0% {
+      content: ".";
+    }
+    25% {
+      content: "..";
+    }
+    50% {
+        content: "...";
+    }
+    75% {
+        content: "";
+    }
+    100% {
+      content: ".";
+    }
+}
+
+
 
 /* About me */
 #whoami {
@@ -213,7 +249,6 @@ margin-bottom: 0px;
 
 #contacts pre span {
     font-size: 13px;
-    /*border-bottom: 2px solid var(--primary-color);*/
 }
 
 #contacts pre .secondary {
@@ -379,9 +414,10 @@ Responsive fix
     display:flex;
     justify-content:center;
     padding:1rem;
-    align-items:center
-   }
-   .modal__container {
+    align-items:center;
+}
+
+.modal__container {
     background-color:var(--background-color);
     padding:calc(var(--global-space) * 3);
     min-width: 50%;
@@ -392,13 +428,15 @@ Responsive fix
     box-sizing:border-box;
     border:1px solid var(--secondary-color);
     box-shadow:3px 3px 0 0 var(--secondary-color);
-   }
-   .modal__header {
+}
+
+.modal__header {
     display:flex;
     justify-content:space-between;
-    align-items:center
-   }
-   .modal__title {
+    align-items:center;
+}
+
+.modal__title {
     margin-top:0;
     margin-bottom:0;
     font-weight:600;
@@ -406,40 +444,45 @@ Responsive fix
     font-size:1.25rem;
     line-height:1.25;
     color:var(--primary-color);
-    box-sizing:border-box
-   }
-   .modal__close {
+    box-sizing:border-box;
+}
+
+.modal__close {
     background:0 0;
     border:0;
     font-size:var(--global-font-size);
     color:var(--secondary-color);
     font-family:var(--font-stack);
     cursor: pointer;
-   }
-    .modal__header .modal__close:hover:before {
-       background-color: var(--secondary-color);
-       color: var(--font-color);
-   }
-   .modal__header .modal__close:before {
+}
+
+.modal__header .modal__close:hover:before {
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+}
+
+.modal__header .modal__close:before {
     content:"[esc]"
-   }
-   .modal__content {
+}
+
+.modal__content {
     margin-top: 30px;
     margin-bottom:var(--global-space);
-    color:var(--global-font-color)
-   }
+    color:var(--global-font-color);
+}
+
 @keyframes mmfadeIn {
     from { opacity: 0; }
-      to { opacity: 1; }
+    to { opacity: 1; }
 }
 
 @keyframes mmfadeOut {
     from { opacity: 1; }
-      to { opacity: 0; }
+    to { opacity: 0; }
 }
 
 @keyframes mmslideIn {
-  from { transform: translateY(15%); }
+    from { transform: translateY(15%); }
     to { transform: translateY(0); }
 }
 
@@ -449,30 +492,29 @@ Responsive fix
 }
 
 .micromodal-slide {
-  display: none;
+    display: none;
 }
 
 .micromodal-slide.is-open {
-  display: block;
+    display: block;
 }
 
 .micromodal-slide[aria-hidden="false"] .modal__overlay {
-  animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+    animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
 }
 
 .micromodal-slide[aria-hidden="false"] .modal__container {
-  animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+    animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
 }
 
 .micromodal-slide[aria-hidden="true"] .modal__overlay {
-  animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+    animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
 }
 
 .micromodal-slide[aria-hidden="true"] .modal__container {
-  animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+    animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
 }
 
-.micromodal-slide .modal__container,
-.micromodal-slide .modal__overlay {
-  will-change: transform;
+.micromodal-slide .modal__container, .micromodal-slide .modal__overlay {
+    will-change: transform;
 }
