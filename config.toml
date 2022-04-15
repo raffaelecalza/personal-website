@@ -2,6 +2,7 @@ baseURL = 'https://raffaelecalza.me'
 languageCode = 'en-en'
 title = "raffaele."
 disableKinds = ["sitemap", "RSS", "taxonomy", "taxonomyTerm"]
+disableHugoGeneratorInject = true
 
 [markup]
 [markup.highlight]
