@@ -39,6 +39,11 @@ body {
     align-items: center;
 }
 
+#not-found img {
+    max-width: 300px;
+    width: 100%;
+}
+
 ol li {
     padding-left: 0px;
 }
