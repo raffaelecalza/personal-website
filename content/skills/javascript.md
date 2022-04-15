@@ -1,5 +1,5 @@
 ---
 name: JavaScript / Node.js
-level: 75
+level: 70
 notes:
 ---
