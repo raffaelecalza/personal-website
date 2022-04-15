@@ -19,6 +19,7 @@ disableKinds = ["sitemap", "RSS", "taxonomy", "taxonomyTerm"]
 
 [params]
 [params.welcome]
+    profileImage = "/img/avatar.png"
     message = "Hi there 👋, I'm"
     messageSpan = "Raffaele"
     quote = "CyberSec student, technology enthusiast and cli lover"

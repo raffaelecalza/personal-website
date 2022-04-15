@@ -1,9 +1,22 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ .Site.Title }}</title>
+    <title>
+        {{ if eq .Title .Site.Title }}
+            {{ .Site.Title }}
+        {{ else if eq .Title .CurrentSection.Title }}
+            ~/{{ lower .Title }}
+        {{ else }}
+            ~/../{{ .Params.name }}
+        {{ end }}
+    </title>
+    <meta name="description" content="Raffaele's home page" />
+    
+    <!-- Icon -->
+    <link rel="icon" href="/img/favicon.ico" />
+    
     <!-- CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" integrity="sha384-wvN1Gjw/z/K/J9g4nsJGXEzA2AOKBTCnlsdubmWbXUzezZKPPObPGbZ2cMvjvEH5" />
     <link rel="stylesheet" type="text/css" href="{{ (resources.Get "/css/code.css" | minify).RelPermalink }}" />
     <link rel="stylesheet" type="text/css" href="{{ (resources.Get "/css/style.css" | minify).RelPermalink }}" />
 </head>

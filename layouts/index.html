@@ -16,7 +16,7 @@
 
 <!-- Welcome message -->
 <div class="container" id="welcome-msg">
-    <img src="https://secure.gravatar.com/avatar/2937340d084be856d395c3842aa9e4bf?s=400" alt="me" />
+    <img src="{{ .Site.Params.welcome.profileImage }}" alt="me" />
     <h1>{{ .Site.Params.welcome.message }} <span>{{ .Site.Params.welcome.messageSpan }}</span></h1>
     <h5>{{ .Site.Params.welcome.quote }}</h5>
     <p><a data-micromodal-trigger="modal-1">[r]esume.pdf</a></p>
