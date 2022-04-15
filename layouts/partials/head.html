@@ -6,17 +6,23 @@
             {{ .Site.Title }}
         {{ else if eq .Title .CurrentSection.Title }}
             ~/{{ lower .Title }}
+        {{ else if eq .Page.Title "404 Page not found" }}
+            not_found ( •_•)
         {{ else }}
-            ~/../{{ .Params.name }}
+            ~/.../{{ .Params.name }}
         {{ end }}
     </title>
-    <meta name="description" content="Raffaele's home page" />
-    
+    {{ if ne .Page.Title "404 Page not found" }}
+    <meta name="description" content="{{ if eq .Title .Site.Title }}Raffaele's home page{{ else if eq .Title .CurrentSection.Title }}{{ .Title }} list{{ else }}{{ .Params.tldr }}{{ end }}" />
+    {{ else }}
+    <meta name="robots" content="noindex" />
+    {{ end }}
+
     <!-- Icon -->
     <link rel="icon" href="/img/favicon.ico" />
     
     <!-- CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" integrity="sha384-wvN1Gjw/z/K/J9g4nsJGXEzA2AOKBTCnlsdubmWbXUzezZKPPObPGbZ2cMvjvEH5" />
+    <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" integrity="sha384-wvN1Gjw/z/K/J9g4nsJGXEzA2AOKBTCnlsdubmWbXUzezZKPPObPGbZ2cMvjvEH5" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="{{ (resources.Get "/css/code.css" | minify).RelPermalink }}" />
     <link rel="stylesheet" type="text/css" href="{{ (resources.Get "/css/style.css" | minify).RelPermalink }}" />
 </head>
