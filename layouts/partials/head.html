@@ -1,6 +1,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ if ne .Page.Title "404 Page not found" }}
+    <meta name="description" content="{{ if eq .Title .Site.Title }}Raffaele's home page{{ else if eq .Title .CurrentSection.Title }}{{ .Title }} list{{ else }}{{ .Params.tldr }}{{ end }}" />
+    {{ else }}
+    <meta name="robots" content="noindex" />
+    {{ end }}
     <title>
         {{ if eq .Title .Site.Title }}
             {{ .Site.Title }}
@@ -12,11 +17,6 @@
             ~/.../{{ .Params.name }}
         {{ end }}
     </title>
-    {{ if ne .Page.Title "404 Page not found" }}
-    <meta name="description" content="{{ if eq .Title .Site.Title }}Raffaele's home page{{ else if eq .Title .CurrentSection.Title }}{{ .Title }} list{{ else }}{{ .Params.tldr }}{{ end }}" />
-    {{ else }}
-    <meta name="robots" content="noindex" />
-    {{ end }}
 
     <!-- Icon -->
     <link rel="icon" href="/img/favicon.ico" />
