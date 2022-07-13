@@ -92,17 +92,21 @@
     username <span class="secondary">{{ .Site.Params.Contacts.telegram }}</span>
     category: chat
 
+<strong><span>gh:</span></strong>
+    name = <a href="{{ .Site.Params.Contacts.github }}" target="_blank">github</a>
+    category: repository
+
 <strong><span>gpg:</span></strong>
-    name = <a href="{{ .Site.Params.Contacts.gpgUrl }}">gpg</a>
+    name = <a href="{{ .Site.Params.Contacts.gpgUrl }}" target="_blank">gpg</a>
     fingerprint <span class="secondary">{{ .Site.Params.Contacts.gpg }}</span>
     category: pub-key
 
 <strong><span>tw:</span></strong>
-    name = <a href="{{ .Site.Params.Contacts.twitter }}">twitter</a>
+    name = <a href="{{ .Site.Params.Contacts.twitter }}" target="_blank">twitter</a>
     category: social
 
 <strong><span>ln:</span></strong>
-    name = <a href="{{ .Site.Params.Contacts.linkedin }}">linkedin</a>
+    name = <a href="{{ .Site.Params.Contacts.linkedin }}" target="_blank">linkedin</a>
     category: social
     </pre>
 </div>
