@@ -420,6 +420,7 @@ Responsive fix
     justify-content:center;
     padding:1rem;
     align-items:center;
+    z-index: 500; /* Fix issue with buttons and terminal-cards showing above the modal */
 }
 
 .modal__container {
