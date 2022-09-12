@@ -87,27 +87,22 @@
 <div class="container" id="contacts">
     <hr />
     <h2 class="terminal-prompt">ifconfig</h2>
-    <pre><strong><span>tg:</span></strong>
+    <pre><strong><span>chat0:</span></strong>
     name = telegram
     username <span class="secondary">{{ .Site.Params.Contacts.telegram }}</span>
-    category: chat
 
-<strong><span>gh:</span></strong>
+<strong><span>repo0:</span></strong>
     name = <a href="{{ .Site.Params.Contacts.github }}" target="_blank">github</a>
-    category: repository
 
-<strong><span>gpg:</span></strong>
+<strong><span>pubkey0:</span></strong>
     name = <a href="{{ .Site.Params.Contacts.gpgUrl }}" target="_blank">gpg</a>
     fingerprint <span class="secondary">{{ .Site.Params.Contacts.gpg }}</span>
-    category: pub-key
 
-<strong><span>tw:</span></strong>
+<strong><span>socnet0:</span></strong>
     name = <a href="{{ .Site.Params.Contacts.twitter }}" target="_blank">twitter</a>
-    category: social
 
-<strong><span>ln:</span></strong>
+<strong><span>socnet1:</span></strong>
     name = <a href="{{ .Site.Params.Contacts.linkedin }}" target="_blank">linkedin</a>
-    category: social
     </pre>
 </div>
 {{- partial "modals/cv.html" . -}}
