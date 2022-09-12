@@ -506,6 +506,7 @@ Responsive fix
     box-sizing:border-box;
     border:1px solid var(--secondary-color);
     box-shadow:3px 3px 0 0 var(--secondary-color);
+    z-index: 500; /* Fix issue with buttons and terminal-cards showing above the modal */
 }
 
 .modal__header {
