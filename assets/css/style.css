@@ -408,78 +408,6 @@ List
     max-width: 100%;
 }
 
-/***
-Responsive fix
-***/
-@media screen and (max-width: 550px) {
-    /* Menu */
-    #menu {
-        display: none;
-    }
-    #welcome-msg {
-        height: 100vh;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-    #scroll-down-msg {
-        position: absolute;
-        bottom: 10px;
-        display: block;
-    }
-    h2.terminal-prompt {
-        font-size: 1.3em;
-    }
-    #skills > div {
-        flex-direction: column;
-    }
-    #skills div.left-skills {
-        width: 100%;
-        float: none;
-        clear: none;
-        padding-right: 0px;
-        padding-left: 0px;
-    }
-    #skills div.right-skills {
-        margin-top: 30px;
-        width: 100%;
-        float: none;
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-    .terminal-card-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: stretch;
-        margin-bottom: 25px;
-    }
-    .terminal-card-container .terminal-card:first-child {
-        margin-bottom: 25px;
-        margin-right: 0px;
-    }
-    #history .terminal-timeline .terminal-card {
-        width: 100%;
-        margin-top: 25px;
-        font-size: 13px;
-    }
-    .terminal-timeline::before {
-        left: 15px;
-    }
-    .terminal-timeline {
-        padding-left: 40px;
-    }
-    .terminal-timeline .terminal-card::before {
-        left: 6px;
-    }
-    .modal__container {
-        max-width: 100%;
-        width: 100%;
-    }
-}
-
 /*** Modal ***/
 .modal__overlay {
     position:fixed;
@@ -498,8 +426,7 @@ Responsive fix
 .modal__container {
     background-color:var(--background-color);
     padding:calc(var(--global-space) * 3);
-    min-width: 50%;
-    max-width:95%;
+    width: 45%;
     max-height: 90vh;
     border-radius:0;
     overflow-y:auto;
@@ -596,4 +523,91 @@ Responsive fix
 
 .micromodal-slide .modal__container, .micromodal-slide .modal__overlay {
     will-change: transform;
+}
+
+/***
+Responsive fix
+***/
+@media screen and (max-width: 1400px) {
+    .modal__container {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .modal__container {
+        width: 95%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .terminal-nav .terminal-menu ul li {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 550px) {
+    /* Menu */
+    #menu {
+        display: none;
+    }
+    #welcome-msg {
+        height: 100vh;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    #scroll-down-msg {
+        position: absolute;
+        bottom: 10px;
+        display: block;
+    }
+    h2.terminal-prompt {
+        font-size: 1.3em;
+    }
+    #skills > div {
+        flex-direction: column;
+    }
+    #skills div.left-skills {
+        width: 100%;
+        float: none;
+        clear: none;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    #skills div.right-skills {
+        margin-top: 30px;
+        width: 100%;
+        float: none;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .terminal-card-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        margin-bottom: 25px;
+    }
+    .terminal-card-container .terminal-card:first-child {
+        margin-bottom: 25px;
+        margin-right: 0px;
+    }
+    #history .terminal-timeline .terminal-card {
+        width: 100%;
+        margin-top: 25px;
+        font-size: 13px;
+    }
+    .terminal-timeline::before {
+        left: 15px;
+    }
+    .terminal-timeline {
+        padding-left: 40px;
+    }
+    .terminal-timeline .terminal-card::before {
+        left: 6px;
+    }
+
+    #powered-by {
+        display: none;
+    }
 }
