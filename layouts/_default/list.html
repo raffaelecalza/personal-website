@@ -5,15 +5,9 @@
 
     {{ range $index, $element := .Pages }}
     <div class="list-item">
-        <!--<h3>
-            {{ $index }}. {{ .Params.Name }}
-        </h3>-->
         <h3>
             {{ .Params.Name }}
         </h3>
-        <!--{{ if .Params.opensource }}
-        <span class="label label-opensource">Open source</span>
-        {{ end }}-->
 
         <ul class="small">
             <li><strong>Hash:</strong> <code>{{ sha1 .Params.Name }}</code></li>
