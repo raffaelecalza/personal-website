@@ -19,6 +19,8 @@ In this way, your class schedule will be synchronized automatically (e.g. if a l
 
 This project is a website built using [Hugo](https://gohugo.io/) and [Pico.css](https://picocss.com/), and currently is hosted on Github Pages.
 
+![](/img/projects/unimi-calendar.png)
+
 ## Contribution
 
 If you find a bug, something is not working or you want to contribute to the project, open an issue or a pull request on Github. The project is open source and [public](https://github.com/raffaelecalza/unimi-calendar/).
