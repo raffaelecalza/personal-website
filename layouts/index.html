@@ -88,21 +88,28 @@
     <hr />
     <h2 class="terminal-prompt">ifconfig</h2>
     <pre><strong><span>chat0:</span></strong>
-    name = telegram
-    username <span class="secondary">{{ .Site.Params.Contacts.telegram }}</span>
+    name = email
+    inet <span class="secondary">{{ .Site.Params.Contacts.email }}</span>
+
+<strong><span>chat1:</span></strong>
+    name = Telegram
+    username <span class="secondary">{{ .Site.Params.Contacts.telegram }}</span>    
 
 <strong><span>repo0:</span></strong>
-    name = <a href="{{ .Site.Params.Contacts.github }}" target="_blank">github</a>
+    name = Github
+    inet <a href="{{ .Site.Params.Contacts.github }}" target="_blank">github/raffaelecalza</a>
 
 <strong><span>pubkey0:</span></strong>
     name = <a href="{{ .Site.Params.Contacts.gpgUrl }}" target="_blank">gpg</a>
     fingerprint <span class="secondary">{{ .Site.Params.Contacts.gpg }}</span>
 
 <strong><span>socnet0:</span></strong>
-    name = <a href="{{ .Site.Params.Contacts.twitter }}" target="_blank">twitter</a>
+    name = Twitter
+    inet <a href="{{ .Site.Params.Contacts.twitter }}" target="_blank">twitter/raffaelecalza</a>
 
 <strong><span>socnet1:</span></strong>
-    name = <a href="{{ .Site.Params.Contacts.linkedin }}" target="_blank">linkedin</a>
+    name = Linkedin
+    inet <a href="{{ .Site.Params.Contacts.linkedin }}" target="_blank">linkedin/raffaelecalza</a>
     </pre>
 </div>
 {{- partial "modals/cv.html" . -}}

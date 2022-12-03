@@ -15,11 +15,10 @@ disableHugoGeneratorInject = true
     lineNos = false
     lineNumbersInTable = true
     noClasses = false
-    style = 'monokai'
     tabWidth = 4
 
 [params]
-version = "v1.0.0"
+version = "v1.0.1"
 repoUrl = "https://github.com/raffaelecalza/personal-website"
 [params.welcome]
     profileImage = "/img/avatar.png"
@@ -30,6 +29,7 @@ repoUrl = "https://github.com/raffaelecalza/personal-website"
 [params.contacts]
     gpg = "A004 55C8 2518 4242 D0EB 5536 6B1C 539C 8990 1933"
     gpgUrl = "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x6B1C539C89901933"
+    email = "hello [at] raffaelecalza [dot] me"
     telegram = "@raffaelecalza"
     linkedin = "https://www.linkedin.com/in/raffaelecalza/"
     twitter = "https://twitter.com/raffaelecalza"

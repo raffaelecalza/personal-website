@@ -3,29 +3,13 @@
       <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
           <header class="modal__header">
               <h2 class="modal__title" id="modal-1-title">
-                  Download my CV
+                  Curriculum Vitae
               </h2>
               <button class="modal__close" aria-label="Close modal" data-micromodal-close=""></button>
           </header>
           <main class="modal__content" id="modal-1-content">
             <div>
-              <p><b>Currently not available...</b></p>
-              <!--<h4>Italian version:</h4>
-              <ul>
-                <li>
-                  Link: ...
-                </li>
-                <li>SHA1: ...</li>
-                <li>Sign: ...</li>
-              </ul>
-              <h4>English version:</h4>
-              <ul>
-                <li>
-                  Link: ...
-                </li>
-                <li>SHA1: ...</li>
-                <li>Sign: ...</li>
-              </ul>-->
+              <p>Send me an email at <code>{{ .Site.Params.Contacts.email }}</code>.</p>
             </div>
           </main>
       </div>
