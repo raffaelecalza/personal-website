@@ -18,7 +18,7 @@ disableHugoGeneratorInject = true
     tabWidth = 4
 
 [params]
-version = "v1.0.1"
+version = "v1.0.2"
 repoUrl = "https://github.com/raffaelecalza/personal-website"
 [params.welcome]
     profileImage = "/img/avatar.png"
